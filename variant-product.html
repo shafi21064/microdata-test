@@ -2,56 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variant Product Test 2</title>  
+    <title>Variant Product Test 3</title>  
    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Test Product with Variants",  // Required (max 500 chars)
-  "description": "This tests product microdata with variants. Includes red and blue color options.",  // Required (max 500 chars)
-  "image": "https://yourdomain.com/images/product-main.jpg",  // Required
-  "brand": {  // Required
+  "id": "VAR-SKU-001",  // Facebook's required plain ID
+  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // Schema.org's URL ID
+  "name": "Test Product with Variants",  // title
+  "description": "This tests product microdata with variants",  // description
+  "image": "https://via.placeholder.com/500?text=Product+with+Variants",  // image_link
+  "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // link
+  "brand": {
     "@type": "Brand",
-    "name": "Test Brand"  // Max 500 chars
+    "name": "Test Brand"
   },
-  "productID": "VAR-SKU-001",  // Retailer's ID
-  "url": "https://yourdomain.com/products/VAR-SKU-001",  // Required
-  "offers": {  // Required
+  "sku": "VAR-SKU-001",
+  "offers": {
     "@type": "AggregateOffer",
-    "priceCurrency": "BDT",  // Required (ISO format)
-    "lowPrice": "19.99",  // Required (numbers only)
-    "highPrice": "22.99",  // Required for variants
+    "lowPrice": "19.99",  // price
+    "highPrice": "22.99",
+    "priceCurrency": "BDT",
     "offerCount": 2,
-    "availability": "https://schema.org/InStock",  // Required
+    "availability": "https://schema.org/InStock",  // availability
     "itemOffered": [  // Variants
       {
         "@type": "Product",
-        "name": "Test Product (Red)",  // Max 500 chars
-        "description": "Red color variant with premium finish",  // Max 500 chars
-        "image": "https://yourdomain.com/images/product-red.jpg",
-        "productID": "VAR-SKU-001-RED",
-        "url": "https://yourdomain.com/products/VAR-SKU-001-RED",
+        "id": "VAR-SKU-001-RED",
+        "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
+        "name": "Test Product (Red)",
+        "description": "Red variant description",
+        "image": "https://via.placeholder.com/500?text=Red+Variant",
+        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
+        "sku": "VAR-SKU-001-RED",
         "offers": {
           "@type": "Offer",
           "price": "19.99",
           "priceCurrency": "BDT",
           "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition"  // Required
+          "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED"
         }
       },
       {
         "@type": "Product",
-        "name": "Test Product (Blue)",  // Max 500 chars
-        "description": "Blue color variant with matte finish",  // Max 500 chars
-        "image": "https://yourdomain.com/images/product-blue.jpg",
-        "productID": "VAR-SKU-001-BLUE",
-        "url": "https://yourdomain.com/products/VAR-SKU-001-BLUE",
+        "id": "VAR-SKU-001-BLUE",
+        "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
+        "name": "Test Product (Blue)",
+        "description": "Blue variant description",
+        "image": "https://via.placeholder.com/500?text=Blue+Variant",
+        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
+        "sku": "VAR-SKU-001-BLUE",
         "offers": {
           "@type": "Offer",
           "price": "22.99",
           "priceCurrency": "BDT",
           "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition"  // Required
+          "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE"
         }
       }
     ]
