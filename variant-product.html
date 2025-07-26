@@ -2,66 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variant Product Test 3</title>  
+    <title>Variant Product Test 4</title>  
    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "id": "VAR-SKU-001",  // Facebook's required plain ID
-  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // Schema.org's URL ID
-  "name": "Test Product with Variants",  // title
-  "description": "This tests product microdata with variants",  // description
-  "image": "https://via.placeholder.com/500?text=Product+with+Variants",  // image_link
-  "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // link
+  "@id": "https://yourdomain.com/products/SKU-123123",  // Unique URL ID
+  "id": "SKU-123123",  // Plain ID for Facebook
+  "name": "WidgetThing",  // title (max 500 chars)
+  "description": "This product is the product you need to do the thing",  // description (max 500 chars)
+  "image": "https://cdn.mycdn.foo/files/123123123.jpg",  // image_link
+  "url": "https://www.mydealsshop.foo/products/widgetthing",  // link
   "brand": {
     "@type": "Brand",
-    "name": "Test Brand"
+    "name": "AcmeCo"
   },
-  "sku": "VAR-SKU-001",
+  "sku": "SKU-123123",
+  "mpn": "SKU-123123",  // Manufacturer Part Number
+  "gtin": "12345678912345",  // Global Trade Item Number
+  "category": "Toys & Games > Toys > Executive Toys > Magnet Toys",
+  "color": "Red",
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Style",
+    "value": "Cool"
+  },
   "offers": {
     "@type": "AggregateOffer",
-    "lowPrice": "19.99",  // price
-    "highPrice": "22.99",
-    "priceCurrency": "BDT",
+    "priceCurrency": "USD",
+    "lowPrice": "9.99",
+    "highPrice": "19.99",
     "offerCount": 2,
-    "availability": "https://schema.org/InStock",  // availability
-    "itemOffered": [  // Variants
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "itemOffered": [
       {
         "@type": "Product",
-        "id": "VAR-SKU-001-RED",
-        "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
-        "name": "Test Product (Red)",
-        "description": "Red variant description",
-        "image": "https://via.placeholder.com/500?text=Red+Variant",
-        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
-        "sku": "VAR-SKU-001-RED",
+        "@id": "https://yourdomain.com/products/SKU-123123-RED",
+        "id": "SKU-123123-RED",
+        "name": "WidgetThing (Red)",
+        "sku": "SKU-123123-RED",
+        "mpn": "SKU-123123-RED",
+        "gtin": "12345678912345",
+        "color": "Red",
         "offers": {
           "@type": "Offer",
           "price": "19.99",
-          "priceCurrency": "BDT",
+          "priceCurrency": "USD",
+          "salePrice": "9.99",
           "availability": "https://schema.org/InStock",
-          "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED"
+          "url": "https://www.mydealsshop.foo/products/widgetthing-red"
         }
       },
       {
         "@type": "Product",
-        "id": "VAR-SKU-001-BLUE",
-        "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
-        "name": "Test Product (Blue)",
-        "description": "Blue variant description",
-        "image": "https://via.placeholder.com/500?text=Blue+Variant",
-        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
-        "sku": "VAR-SKU-001-BLUE",
+        "@id": "https://yourdomain.com/products/SKU-123123-GREEN",
+        "id": "SKU-123123-GREEN",
+        "name": "WidgetThing (Green)",
+        "sku": "SKU-123123-GREEN",
+        "mpn": "SKU-123123-GREEN",
+        "gtin": "12345678912346",
+        "color": "Green",
         "offers": {
           "@type": "Offer",
-          "price": "22.99",
-          "priceCurrency": "BDT",
+          "price": "19.99",
+          "priceCurrency": "USD",
+          "salePrice": "9.99",
           "availability": "https://schema.org/InStock",
-          "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE"
+          "url": "https://www.mydealsshop.foo/products/widgetthing-green"
         }
       }
     ]
-  }
+  },
+  "additionalImage": [
+    "https://cdn.mycdn.foo/files/123123123_image2.jpg",
+    "https://cdn.mycdn.foo/files/123123123_image3.jpg"
+  ]
 }
 </script>
 </head>
