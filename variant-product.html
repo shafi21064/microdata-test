@@ -2,55 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variant Product Test</title>
+    <title>Variant Product Test</title>  
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProductGroup",  // Changed from Product to ProductGroup
+  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",
+  "name": "Test Product with Variants",
+  "image": "https://via.placeholder.com/500?text=Product+with+Variants",
+  "description": "This tests product microdata with variants",
+  "productGroupID": "VAR-SKU-001",  // Main group identifier
+  "brand": {
+    "@type": "Brand",
+    "name": "Test Brand"
+  },
+  "hasVariant": [  // Now properly recognized under ProductGroup
     {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "@id": "VAR-SKU-001",
-        "name": "Test Product with Variants",
-        "image": "https://via.placeholder.com/500?text=Product+with+Variants",
-        "description": "This tests product microdata with variants",
-        "sku": "VAR-SKU-001",
-        "brand": {
-            "@type": "Brand",
-            "name": "Test Brand"
-        },
-        "hasVariant": [
-            {
-                "@type": "Product",
-                "@id": "VAR-SKU-001-RED",
-                "name": "Test Product (Red)",
-                "sku": "VAR-SKU-001-RED",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "19.99",
-                    "priceCurrency": "BDT",
-                    "availability": "https://schema.org/InStock"
-                }
-            },
-            {
-                "@type": "Product",
-                "@id": "VAR-SKU-001-BLUE",
-                "name": "Test Product (Blue)",
-                "sku": "VAR-SKU-001-BLUE",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "22.99",
-                    "priceCurrency": "BDT",
-                    "availability": "https://schema.org/InStock"
-                }
-            }
-        ],
-        "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "19.99",
-            "highPrice": "22.99",
-            "priceCurrency": "BDT",
-            "offerCount": 2
-        }
+      "@type": "Product",
+      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
+      "name": "Test Product (Red)",
+      "sku": "VAR-SKU-001-RED",
+      "offers": {
+        "@type": "Offer",
+        "price": "19.99",
+        "priceCurrency": "BDT",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
+      "name": "Test Product (Blue)",
+      "sku": "VAR-SKU-001-BLUE",
+      "offers": {
+        "@type": "Offer",
+        "price": "22.99",
+        "priceCurrency": "BDT",
+        "availability": "https://schema.org/InStock"
+      }
     }
-    </script>
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "19.99",
+    "highPrice": "22.99",
+    "priceCurrency": "BDT",
+    "offerCount": 2
+  }
+}
+</script>
 </head>
 <body>
     <h1>Variant Product Microdata Test</h1>
