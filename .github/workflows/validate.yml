@@ -1,0 +1,76 @@
+name: Microdata Validation
+on: [push, pull_request]
+
+jobs:
+  validate-microdata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Validate with Google Rich Results Test
+        run: |
+          echo "Validating microdata with Google..."
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          
+          # Test all pages
+          for page in index.html simple-product.html variant-product.html out-of-stock.html; do
+            echo "Testing $page..."
+            curl -s "https://search.google.com/test/rich-results?url=${BASE_URL}/${page}" | grep -q "Test passed" && \
+              echo "✅ $page passed Google validation" || \
+              (echo "❌ $page failed Google validation" && exit 1)
+          done
+
+      - name: Validate with Schema.org
+        run: |
+          echo "Validating with Schema.org..."
+          apt-get install -y python3-pip
+          pip install pyld
+          
+          cat << 'EOF' > validate_schema.py
+          from pyld import jsonld
+          import json, glob, sys
+          
+          for file in glob.glob("*.html"):
+              try:
+                  with open(file) as f:
+                      content = f.read()
+                      if '<script type="application/ld+json">' in content:
+                          json_str = content.split('<script type="application/ld+json">')[1].split('</script>')[0]
+                          json_data = json.loads(json_str)
+                          expanded = jsonld.expand(json_data)
+                          print(f"✅ {file} has valid JSON-LD")
+              except Exception as e:
+                  print(f"❌ {file} failed validation: {str(e)}")
+                  sys.exit(1)
+          EOF
+          
+          python3 validate_schema.py
+
+      - name: Check Facebook requirements
+        run: |
+          echo "Checking Facebook requirements..."
+          for file in simple-product.html variant-product.html out-of-stock.html; do
+            echo "Checking $file..."
+            
+            # Check for required Facebook fields
+            if ! grep -q '"@id"' $file; then
+              echo "❌ $file missing @id field (required by Facebook)"
+              exit 1
+            fi
+            
+            if ! grep -q '"sku"' $file; then
+              echo "❌ $file missing sku field (required by Facebook)"
+              exit 1
+            fi
+            
+            echo "✅ $file meets basic Facebook requirements"
+          done
+
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "All microdata validation tests passed successfully!"
+          echo "Test your pages manually with:"
+          echo "- Facebook Debugger: https://developers.facebook.com/tools/debug/"
+          echo "- Google Test: https://search.google.com/test/rich-results"
