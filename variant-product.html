@@ -2,81 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variant Product Test 4</title>  
-   <script type="application/ld+json">
+    <title>Variant Product Test 5</title>
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": "https://yourdomain.com/products/SKU-123123",  // Unique URL ID
-  "id": "SKU-123123",  // Plain ID for Facebook
-  "name": "WidgetThing",  // title (max 500 chars)
-  "description": "This product is the product you need to do the thing",  // description (max 500 chars)
-  "image": "https://cdn.mycdn.foo/files/123123123.jpg",  // image_link
-  "url": "https://www.mydealsshop.foo/products/widgetthing",  // link
+  "@type": "ProductGroup",
+  "productGroupID": "tshirt-12345",
+  "name": "Exclusive T-Shirt For Men - Fabric Soft and Comfortable",
+  "description": "Comfortable & Regular FIT T-Shirt. Fabric GSM 160-165. Export Quality.",
   "brand": {
     "@type": "Brand",
-    "name": "AcmeCo"
+    "name": "No Brand"
   },
-  "sku": "SKU-123123",
-  "mpn": "SKU-123123",  // Manufacturer Part Number
-  "gtin": "12345678912345",  // Global Trade Item Number
-  "category": "Toys & Games > Toys > Executive Toys > Magnet Toys",
-  "color": "Red",
-  "additionalProperty": {
-    "@type": "PropertyValue",
-    "name": "Style",
-    "value": "Cool"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "lowPrice": "9.99",
-    "highPrice": "19.99",
-    "offerCount": 2,
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
-    "itemOffered": [
-      {
-        "@type": "Product",
-        "@id": "https://yourdomain.com/products/SKU-123123-RED",
-        "id": "SKU-123123-RED",
-        "name": "WidgetThing (Red)",
-        "sku": "SKU-123123-RED",
-        "mpn": "SKU-123123-RED",
-        "gtin": "12345678912345",
-        "color": "Red",
-        "offers": {
-          "@type": "Offer",
-          "price": "19.99",
-          "priceCurrency": "USD",
-          "salePrice": "9.99",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.mydealsshop.foo/products/widgetthing-red"
-        }
+  "image": "https://example.com/images/tshirt-group.jpg",
+  "category": "Fashion > Men > Clothing > Casual Tops",
+  "variesBy": ["color", "size"],
+  "hasVariant": [
+    {
+      "@type": "Product",
+      "name": "T-Shirt - Red - M",
+      "sku": "TSHIRT-RED-M",
+      "color": "Red",
+      "size": "M",
+      "image": "https://example.com/images/tshirt-red-m.jpg",
+      "url": "https://example.com/tshirt-red-m",
+      "isVariantOf": {
+        "@type": "ProductGroup",
+        "productGroupID": "tshirt-12345"
       },
-      {
-        "@type": "Product",
-        "@id": "https://yourdomain.com/products/SKU-123123-GREEN",
-        "id": "SKU-123123-GREEN",
-        "name": "WidgetThing (Green)",
-        "sku": "SKU-123123-GREEN",
-        "mpn": "SKU-123123-GREEN",
-        "gtin": "12345678912346",
-        "color": "Green",
-        "offers": {
-          "@type": "Offer",
-          "price": "19.99",
-          "priceCurrency": "USD",
-          "salePrice": "9.99",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.mydealsshop.foo/products/widgetthing-green"
-        }
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BDT",
+        "price": "499",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
       }
-    ]
-  },
-  "additionalImage": [
-    "https://cdn.mycdn.foo/files/123123123_image2.jpg",
-    "https://cdn.mycdn.foo/files/123123123_image3.jpg"
+    },
+    {
+      "@type": "Product",
+      "name": "T-Shirt - Blue - L",
+      "sku": "TSHIRT-BLUE-L",
+      "color": "Blue",
+      "size": "L",
+      "image": "https://example.com/images/tshirt-blue-l.jpg",
+      "url": "https://example.com/tshirt-blue-l",
+      "isVariantOf": {
+        "@type": "ProductGroup",
+        "productGroupID": "tshirt-12345"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BDT",
+        "price": "499",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
   ]
 }
 </script>
