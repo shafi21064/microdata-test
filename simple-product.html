@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Product Test</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "SIMPLE-SKU-001",
+        "name": "Test Simple Product",
+        "image": "https://via.placeholder.com/500?text=Simple+Product",
+        "description": "This is a test of basic product microdata",
+        "sku": "SIMPLE-SKU-001",
+        "brand": {
+            "@type": "Brand",
+            "name": "Test Brand"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "29.99",
+            "priceCurrency": "BDT",
+            "availability": "https://schema.org/InStock",
+            "url": "https://example.com/product/simple"
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Simple Product Microdata Test</h1>
+    <p><a href="index.html">← Back to all tests</a></p>
+    <p>This page tests basic product markup without variants.</p>
+</body>
+</html>
