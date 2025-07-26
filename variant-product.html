@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Variant Product Test</title>  
-    <script type="application/ld+json">
+   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProductGroup",  // Changed from Product to ProductGroup
-  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",
+  "@type": "ProductGroup",
+  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // Facebook requires URL-style IDs
+  "productGroupID": "VAR-SKU-001",
   "name": "Test Product with Variants",
   "image": "https://via.placeholder.com/500?text=Product+with+Variants",
   "description": "This tests product microdata with variants",
-  "productGroupID": "VAR-SKU-001",  // Main group identifier
   "brand": {
     "@type": "Brand",
     "name": "Test Brand"
   },
-  "hasVariant": [  // Now properly recognized under ProductGroup
+  "hasVariant": [
     {
       "@type": "Product",
-      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
-      "name": "Test Product (Red)",
+      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",  // Full URL as ID
+      "id": "VAR-SKU-001-RED",  // Explicit ID field for Facebook
       "sku": "VAR-SKU-001-RED",
+      "name": "Test Product (Red)",
       "offers": {
         "@type": "Offer",
         "price": "19.99",
         "priceCurrency": "BDT",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED"  // Added URL
       }
     },
     {
       "@type": "Product",
       "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
-      "name": "Test Product (Blue)",
+      "id": "VAR-SKU-001-BLUE",  // Explicit ID field for Facebook
       "sku": "VAR-SKU-001-BLUE",
+      "name": "Test Product (Blue)",
       "offers": {
         "@type": "Offer",
         "price": "22.99",
         "priceCurrency": "BDT",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE"  // Added URL
       }
     }
   ],
