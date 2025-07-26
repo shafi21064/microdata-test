@@ -12,7 +12,7 @@ This repository contains test pages for validating product microdata implementat
 
 1. Deploy to GitHub Pages
 2. Test each page using:
-   - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+   - [Facebook Sharing Debugger](https://https://business.facebook.com/ads/microdata/debug/)
    - [Google Rich Results Test](https://search.google.com/test/rich-results)
    - [Schema.org Validator](https://validator.schema.org/)
 
