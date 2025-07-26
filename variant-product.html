@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variant Product Test</title>  
+    <title>Variant Product Test 1</title>  
    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProductGroup",
-  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // Facebook requires URL-style IDs
-  "productGroupID": "VAR-SKU-001",
-  "name": "Test Product with Variants",
-  "image": "https://via.placeholder.com/500?text=Product+with+Variants",
-  "description": "This tests product microdata with variants",
+  "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",
+  "id": "VAR-SKU-001",  // Explicit ID for Facebook
+  "name": "Test Product with Variants",  // title
+  "description": "This tests product microdata with variants",  // description
+  "image": "https://via.placeholder.com/500?text=Product+with+Variants",  // image_link
+  "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001",  // link
   "brand": {
     "@type": "Brand",
     "name": "Test Brand"
@@ -19,30 +20,36 @@
   "hasVariant": [
     {
       "@type": "Product",
-      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",  // Full URL as ID
-      "id": "VAR-SKU-001-RED",  // Explicit ID field for Facebook
+      "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",
+      "id": "VAR-SKU-001-RED",
       "sku": "VAR-SKU-001-RED",
-      "name": "Test Product (Red)",
+      "name": "Test Product (Red)",  // title
+      "description": "Red variant of test product",  // description
+      "image": "https://via.placeholder.com/500?text=Red+Variant",  // image_link
+      "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED",  // link
       "offers": {
         "@type": "Offer",
-        "price": "19.99",
+        "price": "19.99",  // price
         "priceCurrency": "BDT",
-        "availability": "https://schema.org/InStock",
-        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-RED"  // Added URL
+        "availability": "https://schema.org/InStock",  // availability
+        "itemCondition": "https://schema.org/NewCondition"
       }
     },
     {
       "@type": "Product",
       "@id": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",
-      "id": "VAR-SKU-001-BLUE",  // Explicit ID field for Facebook
+      "id": "VAR-SKU-001-BLUE",
       "sku": "VAR-SKU-001-BLUE",
-      "name": "Test Product (Blue)",
+      "name": "Test Product (Blue)",  // title
+      "description": "Blue variant of test product",  // description
+      "image": "https://via.placeholder.com/500?text=Blue+Variant",  // image_link
+      "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE",  // link
       "offers": {
         "@type": "Offer",
-        "price": "22.99",
+        "price": "22.99",  // price
         "priceCurrency": "BDT",
-        "availability": "https://schema.org/InStock",
-        "url": "https://shafi21064.github.io/microdata-test/VAR-SKU-001-BLUE"  // Added URL
+        "availability": "https://schema.org/InStock",  // availability
+        "itemCondition": "https://schema.org/NewCondition"
       }
     }
   ],
@@ -51,7 +58,8 @@
     "lowPrice": "19.99",
     "highPrice": "22.99",
     "priceCurrency": "BDT",
-    "offerCount": 2
+    "offerCount": 2,
+    "availability": "https://schema.org/InStock"  // availability for group
   }
 }
 </script>
